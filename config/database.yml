@@ -22,4 +22,5 @@ test:
 
 production:
   <<: *default
+  host: <%= ENV['DATABASE_URL'] %>
   database: encuesta_grupa
