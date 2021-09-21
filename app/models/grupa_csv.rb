@@ -10,7 +10,7 @@ class GrupaCsv
 		end
 		csv_file = ::CSV.generate(col_sep:"|") do |csv|
 			csv << headers
-			row =[data[:nombre], data[:provincia], data[:opera_otra_provicia], data[:notas]]
+			row =[data[:nombre], data[:provincia], data[:opera_otra_provincia], data[:notas]]
 			data[:years].each do |year|
 				
 				row << year[:data][:integrantes]

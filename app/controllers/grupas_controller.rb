@@ -14,7 +14,7 @@ class GrupasController < ApplicationController
 	def grupa_params
 		params.require(:grupa).permit(:nombre, 
 			:provincia, 
-			:opera_otra_provicia,
+			:opera_otra_provincia,
 			:notas,
 			years:[ :year, data:[
 				:integrantes, :usuarios_mudaron, :catidad_mudanza, :mudados_siguen_participando, :mudados_siguen_participando_donde, :base_grupa, :otras_zonas
