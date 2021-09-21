@@ -2,7 +2,7 @@ require 'csv'
 
 class GrupaCsv
 	def self.to_csv(data)
-		headers = ['Nombre', 'Provincia']
+		headers = ['Nombre', 'Provincia', 'Opera en Otra Provincia?', 'Notas']
 		(2012..2020).each do |year|
 			['Integrantes', 'Usuarios Mudados?', 'Cantidad Mudados', 'Mudados Siguen', 'Mudados Municipio', 'Base Grupa', 'Otras Zonas'].each do |sub_header|
 				headers << "#{year} #{sub_header}"
@@ -10,7 +10,7 @@ class GrupaCsv
 		end
 		csv_file = ::CSV.generate(col_sep:"|") do |csv|
 			csv << headers
-			row =[data[:nombre], data[:provincia]]
+			row =[data[:nombre], data[:provincia], data[:opera_otra_provicia], data[:notas]]
 			data[:years].each do |year|
 				
 				row << year[:data][:integrantes]
